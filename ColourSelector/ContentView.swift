@@ -26,13 +26,19 @@ struct ContentView: View {
                      brightness: 0.9)
     }
     
+    private var darkerColourOne: Color {
+        return Color(hue: hue, saturation: 0.8, brightness: 0.6)
+    }
+    
+    private var darkerColourTwo: Color {
+        return Color(hue: hue, saturation: 0.8, brightness: 0.3)
+    }
+    
     //Interface
     var body: some View {
         VStack {
             
-            VStack {
-                
-            }
+            VStack {}
             .frame(width: 200, height: 200)
             .background(baseColour)
             
@@ -54,6 +60,31 @@ struct ContentView: View {
                     Text("360")
                 })
             
+            // title and colour patch with the base colour, and its two darker variations
+            Group {
+                HStack {
+                    Text("MONOCHROMATIC")
+                        .padding(.leading)
+                    Spacer()
+                }
+                
+                HStack (spacing: 0) {
+                    Rectangle()
+                        .foregroundColor(baseColour)
+                        .frame(width: 100, height: 100)
+                    
+                    Rectangle()
+                        .foregroundColor(darkerColourOne)
+                        .frame(width: 100, height: 100)
+                    
+                    Rectangle()
+                        .foregroundColor(darkerColourTwo)
+                        .frame(width: 100, height: 100)
+                    
+                    Spacer()
+                }
+                .padding(.leading)
+            }
             Spacer()
         }
         .padding()
