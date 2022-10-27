@@ -8,6 +8,6 @@
 import Foundation
 
 struct SavedPalette: Identifiable {
-    let id = UUID() // universally unique identifier
+    let id = UUID() // Universally unique identifier
     let hue: Double
 }

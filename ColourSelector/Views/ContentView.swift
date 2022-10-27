@@ -16,7 +16,6 @@ struct ContentView: View {
     @State private var savedPalettes: [SavedPalette] = []
     
     // MARK: Computed Properties
-    
     // The selected hue expressed as a value between 0 and 1.0
     private var hue: Double {
         return selectedHue / 360.0
@@ -27,14 +26,6 @@ struct ContentView: View {
         return Color(hue: hue,
                      saturation: 0.8,
                      brightness: 0.9)
-    }
-    
-    private var darkerColourOne: Color {
-        return Color(hue: hue, saturation: 0.8, brightness: 0.6)
-    }
-    
-    private var darkerColourTwo: Color {
-        return Color(hue: hue, saturation: 0.8, brightness: 0.3)
     }
     
     //Interface
@@ -71,37 +62,29 @@ struct ContentView: View {
                     Spacer()
                 }
                 
-                HStack (spacing: 0) {
-                    Rectangle()
-                        .foregroundColor(baseColour)
-                        .frame(width: 100, height: 100)
-                    
-                    Rectangle()
-                        .foregroundColor(darkerColourOne)
-                        .frame(width: 100, height: 100)
-                    
-                    Rectangle()
-                        .foregroundColor(darkerColourTwo)
-                        .frame(width: 100, height: 100)
-                    
-                    Spacer()
-                }
-                .padding(.leading)
+                MonochromaticPaletteView(selectedHue: selectedHue)
+                
             }
+            
             Button(action: {
-                // Create a new palette instance and add it to the list
+                // Create a new palette instance
                 let newPalette = SavedPalette(hue: hue)
                 
-                // add it to the list
+                // Add it to the list
                 savedPalettes.append(newPalette)
             }, label: {
                 Text("Save")
             })
-            Spacer()
+            
+            // Show the saved palettes
+            List(savedPalettes) { currentPalette in
+                
+                MonochromaticPaletteView(selectedHue: currentPalette.hue * 360)
+                
+            }
+            
         }
         .padding()
-        
-        
         
     }
 }

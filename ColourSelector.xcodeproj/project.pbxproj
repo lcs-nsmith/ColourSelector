@@ -12,6 +12,7 @@
 		BF362613290AD802001E1EF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF362612290AD802001E1EF9 /* Assets.xcassets */; };
 		BF362616290AD802001E1EF9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF362615290AD802001E1EF9 /* Preview Assets.xcassets */; };
 		BF36261F290AE492001E1EF9 /* SavedPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF36261E290AE492001E1EF9 /* SavedPalette.swift */; };
+		BF362622290AE7BB001E1EF9 /* MonochromaticPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF362621290AE7BB001E1EF9 /* MonochromaticPaletteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		BF362612290AD802001E1EF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF362615290AD802001E1EF9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BF36261E290AE492001E1EF9 /* SavedPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPalette.swift; sourceTree = "<group>"; };
+		BF362621290AE7BB001E1EF9 /* MonochromaticPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonochromaticPaletteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				BF36260E290AD800001E1EF9 /* ColourSelectorApp.swift */,
 				BF36261D290AE453001E1EF9 /* Model */,
 				BF36261C290AE44D001E1EF9 /* Views */,
+				BF362620290AE78A001E1EF9 /* Helpers */,
 				BF362612290AD802001E1EF9 /* Assets.xcassets */,
 				BF362614290AD802001E1EF9 /* Preview Content */,
 			);
@@ -84,6 +87,14 @@
 				BF36261E290AE492001E1EF9 /* SavedPalette.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BF362620290AE78A001E1EF9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BF362621290AE7BB001E1EF9 /* MonochromaticPaletteView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 			files = (
 				BF36261F290AE492001E1EF9 /* SavedPalette.swift in Sources */,
 				BF362611290AD800001E1EF9 /* ContentView.swift in Sources */,
+				BF362622290AE7BB001E1EF9 /* MonochromaticPaletteView.swift in Sources */,
 				BF36260F290AD800001E1EF9 /* ColourSelectorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
