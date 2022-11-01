@@ -30,62 +30,75 @@ struct ContentView: View {
     
     //Interface
     var body: some View {
-        VStack {
+        
+        ZStack {
+            Color(.systemGray6)
+                .ignoresSafeArea()
             
-            VStack {}
-                .frame(width: 200, height: 200)
-                .background(baseColour)
-            
-            Text("Hue")
-                .bold()
-            
-            Text("\(selectedHue.formatted(.number.precision(.fractionLength(1))))°")
-            
-            Slider(
-                value: $selectedHue,
-                in: 0...360,
-                label: {
-                    Text("Hue")
-                },
-                minimumValueLabel: {
-                    Text("0")
-                },
-                maximumValueLabel: {
-                    Text("360")
-                })
-            
-            // title and colour patch with the base colour, and its two darker variations
-            Group {
+            VStack {
+                
                 HStack {
-                    Text("MONOCHROMATIC")
-                        .padding(.leading)
-                    Spacer()
+                    Rectangle()
+                        .frame(width: 130, height: 130)
+                        .foregroundColor(baseColour)
+                    
+                    VStack (spacing: 0){
+                        Text("Hue")
+                            .bold()
+                            .padding(.bottom)
+                        
+                        Text("\(selectedHue.formatted(.number.precision(.fractionLength(1))))°")
+                        
+                        Slider(
+                            value: $selectedHue,
+                            in: 0...360,
+                            label: {
+                                Text("Hue")
+                            },
+                            minimumValueLabel: {
+                                Text("0")
+                            },
+                            maximumValueLabel: {
+                                Text("360")
+                            })
+                    }
                 }
                 
-                MonochromaticPaletteView(selectedHue: selectedHue)
+                // title and colour patch with the base colour, and its two darker variations
+                Group {
+                    HStack {
+                        Text("MONOCHROMATIC")
+                            .padding(.leading)
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        MonochromaticPaletteView(selectedHue: selectedHue)
+                        Button(action: {
+                            // Create a new palette instance
+                            let newPalette = SavedPalette(hue: hue)
+                            
+                            // Add it to the list
+                            savedPalettes.append(newPalette)
+                        }, label: {
+                            Text("SAVE")
+                        })
+                        .buttonStyle(.bordered)
+                        .padding(.trailing)
+                    }
+                }
+                
+                // Show the saved palettes
+                List(savedPalettes) { currentPalette in
+                    
+                    MonochromaticPaletteView(selectedHue: currentPalette.hue * 360)
+                    
+                }
                 
             }
-            
-            Button(action: {
-                // Create a new palette instance
-                let newPalette = SavedPalette(hue: hue)
-                
-                // Add it to the list
-                savedPalettes.append(newPalette)
-            }, label: {
-                Text("Save")
-            })
-            
-            // Show the saved palettes
-            List(savedPalettes) { currentPalette in
-                
-                MonochromaticPaletteView(selectedHue: currentPalette.hue * 360)
-                
-            }
+            .padding()
             
         }
-        .padding()
-        
     }
 }
 

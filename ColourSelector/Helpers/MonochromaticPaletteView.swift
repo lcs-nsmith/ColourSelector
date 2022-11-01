@@ -43,15 +43,15 @@ struct MonochromaticPaletteView: View {
             
             Rectangle()
                 .foregroundColor(baseColour)
-                .frame(width: 100, height: 100)
+                .frame(width: 90, height: 90)
             
             Rectangle()
                 .foregroundColor(darkerColourOne)
-                .frame(width: 100, height: 100)
+                .frame(width: 90, height: 90)
             
             Rectangle()
                 .foregroundColor(darkerColourTwo)
-                .frame(width: 100, height: 100)
+                .frame(width: 90, height: 90)
             
             Spacer()
             
