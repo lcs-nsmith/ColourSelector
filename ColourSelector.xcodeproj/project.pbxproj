@@ -58,7 +58,6 @@
 				BF36260E290AD800001E1EF9 /* ColourSelectorApp.swift */,
 				BF36261D290AE453001E1EF9 /* Model */,
 				BF36261C290AE44D001E1EF9 /* Views */,
-				BF362620290AE78A001E1EF9 /* Helpers */,
 				BF362612290AD802001E1EF9 /* Assets.xcassets */,
 				BF362614290AD802001E1EF9 /* Preview Content */,
 			);
@@ -77,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				BF362610290AD800001E1EF9 /* ContentView.swift */,
+				BF362620290AE78A001E1EF9 /* Helpers */,
 			);
 			path = Views;
 			sourceTree = "<group>";

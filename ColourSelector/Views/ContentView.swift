@@ -41,7 +41,7 @@ struct ContentView: View {
                     Rectangle()
                         .frame(width: 130, height: 130)
                         .foregroundColor(baseColour)
-                    
+                        
                     VStack (spacing: 0){
                         Text("Hue")
                             .bold()
