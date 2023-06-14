@@ -103,24 +103,24 @@
         }
     }
 
-    struct ContentView_Previews: PreviewProvider {
-        
-        static var previews: some View {
-            LiveContentView()
-        }
-        
-        // Create a view to simulate the App Level Entry Point -> ContentView connection
-        struct LiveContentView: View {
-            
-            // Populate with some palettes to start...
-            @State var palettes: [SavedPalette] = examplePalettes
-            
-            var body: some View {
-                
-                ContentView(savedPalettes: $palettes)
-                
-            }
-        }
-        
-        
-    }
+//    struct ContentView_Previews: PreviewProvider {
+//
+//        static var previews: some View {
+//            LiveContentView()
+//        }
+//
+//        // Create a view to simulate the App Level Entry Point -> ContentView connection
+//        struct LiveContentView: View {
+//
+//            // Populate with some palettes to start...
+//            @State var palettes: [SavedPalette] = examplePalettes
+//
+//            var body: some View {
+//
+//                ContentView(savedPalettes: $palettes)
+//
+//            }
+//        }
+//
+//
+//    }
